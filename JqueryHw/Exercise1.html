@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Changing Text with jQuery</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f8f8f8;
+      margin: 0;
+    }
+
+    #hello-world {
+      font-size: 50px;
+      font-weight: bold;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div id="hello-world">Hello World!</div>
+  <script>
+    const colors = ['black', 'blue', 'green'];
+    let currentIndex = 0;
+
+    function changeColor() {
+      $('#hello-world').css('color', colors[currentIndex]);
+      currentIndex = (currentIndex + 1) % colors.length;
+    }
+
+    setInterval(changeColor, 1000);
+  </script>
+</body>
+</html>
